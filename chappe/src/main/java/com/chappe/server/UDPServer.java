@@ -1,10 +1,11 @@
 package com.chappe.server;
 
 import com.chappe.model.Arm;
-import com.chappe.model.PositionSignalMap;
 import com.chappe.model.Tower;
 import com.chappe.model.Zustand;
+import com.chappe.repository.PositionSignalMap;
 import com.chappe.service.TowerSender;
+import com.chappe.service.WordService;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -18,7 +19,7 @@ public class UDPServer {
     private Map<Tower, Long> letzteUpdate = new HashMap<>();
     private int timeout = 500; // ms
     private PositionSignalMap positionSignalMap = new PositionSignalMap();
-    WordSender wordDecoder = new WordSender();
+    WordService wordDecoder = new WordService();
     private ArrayList<Integer> previousSignal = new ArrayList<>();//temporäre
     private int counter = 0;//temporäre
     public void start() throws Exception {
