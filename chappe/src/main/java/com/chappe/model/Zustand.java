@@ -26,9 +26,9 @@ public class Zustand {
     public static Zustand fromBytes(byte[] data) {
         Zustand zustand = new Zustand();
         if (data != null && data.length >= 3) {
-            zustand.regulator = data[1];
-            zustand.indicator1 = data[2];
-            zustand.indicator2 = data[3];
+            zustand.regulator = data[2];
+            zustand.indicator1 = data[3];
+            zustand.indicator2 = data[4];
         }
         return zustand;
     }

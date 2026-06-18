@@ -7,19 +7,25 @@ public class Tower {
     private Arm regulator;
     private Arm indicator1;
     private Arm indicator2;
-    private int port;
+    private int frontPort;
+     private int backPort;
+
     private Tower nachfolger;
     private Tower vorgaenger;
+    private boolean isMainTower = false;
     private ArrayList<Integer> signals = new ArrayList<>();
 
     public Tower(int id) {
         this.id = id;
     }
-    public Tower(int id, Arm regulator, Arm indicator1, Arm indicator2) {
+    public Tower(int id, Arm regulator, Arm indicator1, Arm indicator2, int frontPort, int backPort,boolean isMainTower) {
         this.id = id;
         this.regulator = regulator;
         this.indicator1 = indicator1;
         this.indicator2 = indicator2;
+        this.frontPort = frontPort;
+        this.backPort = backPort;
+        this.isMainTower = isMainTower;
     }
      public Tower() {
     }
@@ -44,11 +50,17 @@ public class Tower {
         }
         indicator2.setPosition(p);
     }
-    public void setPort(int port) {
-        this.port = port;
+    public void setFrontPort(int frontPort) {
+        this.frontPort = frontPort;
     }
-    public int getPort() {
-        return port;
+    public void setBackPort(int backPort) {
+        this.backPort = backPort;
+    }
+    public int getFrontPort() {
+        return frontPort;
+    }
+    public int getBackPort() {
+        return backPort;
     }
 
     public int getId() {
@@ -86,5 +98,11 @@ public class Tower {
     }
     public void setVorgaenger(Tower vorgaenger) {
         this.vorgaenger = vorgaenger;
+    }
+    public boolean isMainTower() {
+        return isMainTower;
+    }
+    public void setIsMainTower(boolean isMainTower) {
+        this.isMainTower = isMainTower;
     }
 }

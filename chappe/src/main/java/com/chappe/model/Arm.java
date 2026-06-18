@@ -1,7 +1,7 @@
 package com.chappe.model;
 
 public class Arm {
-    private int position = -1;
+    private int position = 0;
 
     public int getPosition() {
         return position;
