@@ -28,6 +28,7 @@ public class App
     t2.setVorgaenger(t1);
     t2.setNachfolger(t3);
     t3.setVorgaenger(t2);
+    //todo later: create the network directly  with towernodes
     FranceNetwork network = new FranceNetwork(List.of(t1, t2, t3));
     List<TowerNode> towerNodes = Functions.createTowerNodes(network.getTowers());
     MainTowerNode mainNode = (MainTowerNode) towerNodes.get(0);
